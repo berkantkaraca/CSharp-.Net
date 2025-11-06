@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14-HashSet", "14-HashSet\14
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15-Metot", "15-Metot\15-Metot.csproj", "{ADA7F6CC-6362-4FB7-A696-186A6A6D4F15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16-Class", "16-Class\16-Class.csproj", "{1922B805-08DB-4B08-A377-5742697F3EFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{ADA7F6CC-6362-4FB7-A696-186A6A6D4F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADA7F6CC-6362-4FB7-A696-186A6A6D4F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADA7F6CC-6362-4FB7-A696-186A6A6D4F15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1922B805-08DB-4B08-A377-5742697F3EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1922B805-08DB-4B08-A377-5742697F3EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1922B805-08DB-4B08-A377-5742697F3EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1922B805-08DB-4B08-A377-5742697F3EFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
