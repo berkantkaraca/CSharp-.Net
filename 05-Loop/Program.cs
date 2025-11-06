@@ -47,6 +47,17 @@
                 sayac++;
                 goto Start;
             }
+
+            int[] sayilar = { 1, 2, 3, 4, 5 };
+            for (int i = 0; i < sayilar.Length; i++) //for okuma ve yazma işlemi yapar. elemanlara index numarasıyla erişir
+            {
+                sayilar[i] = sayilar[i] * 2;
+            }
+
+            foreach (int sayi in sayilar) //foreach sadece okuma işlemini yapar. yukarıdaki gibi dizinin elemanlarını değiştiremez. elemanları sırasına göre işlem yapar
+            {
+                Console.WriteLine(sayi);
+            }
         }
     }
 }
