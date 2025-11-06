@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08-List", "08-List\08-List.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09-ArrayList", "09-ArrayList\09-ArrayList.csproj", "{F67D36D6-4AC6-4A8E-8D73-AED6C53DDD58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10-Dictionary", "10-Dictionary\10-Dictionary.csproj", "{20748D38-7829-4668-ACAA-3D95467D4BA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{F67D36D6-4AC6-4A8E-8D73-AED6C53DDD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F67D36D6-4AC6-4A8E-8D73-AED6C53DDD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F67D36D6-4AC6-4A8E-8D73-AED6C53DDD58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20748D38-7829-4668-ACAA-3D95467D4BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20748D38-7829-4668-ACAA-3D95467D4BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20748D38-7829-4668-ACAA-3D95467D4BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20748D38-7829-4668-ACAA-3D95467D4BA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
