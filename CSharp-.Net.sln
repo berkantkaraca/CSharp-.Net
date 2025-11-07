@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20-PartialClass", "20-Parti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21-Struct", "21-Struct\21-Struct.csproj", "{C25ED1AA-C535-4DDC-84FE-EDC4D2F3AC87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22-Enum", "22-Enum\22-Enum.csproj", "{A35EDF6E-990C-4DA9-A680-1F4AB5CD8C37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{C25ED1AA-C535-4DDC-84FE-EDC4D2F3AC87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C25ED1AA-C535-4DDC-84FE-EDC4D2F3AC87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C25ED1AA-C535-4DDC-84FE-EDC4D2F3AC87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A35EDF6E-990C-4DA9-A680-1F4AB5CD8C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35EDF6E-990C-4DA9-A680-1F4AB5CD8C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35EDF6E-990C-4DA9-A680-1F4AB5CD8C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35EDF6E-990C-4DA9-A680-1F4AB5CD8C37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
