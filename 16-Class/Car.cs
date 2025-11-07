@@ -1,4 +1,4 @@
-﻿namespace _16_OOP_Class
+﻿namespace _16_Class
 {
     public class Car
     {

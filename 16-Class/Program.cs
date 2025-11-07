@@ -1,6 +1,4 @@
-﻿using _16_OOP_Class;
-
-namespace _16_Class
+﻿namespace _16_Class
 {
     internal class Program
     {
