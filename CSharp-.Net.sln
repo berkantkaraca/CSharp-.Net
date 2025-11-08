@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "32-Relationship", "32-Relat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "33-Delegate", "33-Delegate\33-Delegate.csproj", "{D244C323-296D-4B55-873B-36D0C7AE1440}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "34-LINQ", "34-LINQ\34-LINQ.csproj", "{792B6B35-D4E6-48A2-A38F-CB86FE939A17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -207,6 +209,10 @@ Global
 		{D244C323-296D-4B55-873B-36D0C7AE1440}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D244C323-296D-4B55-873B-36D0C7AE1440}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D244C323-296D-4B55-873B-36D0C7AE1440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{792B6B35-D4E6-48A2-A38F-CB86FE939A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{792B6B35-D4E6-48A2-A38F-CB86FE939A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{792B6B35-D4E6-48A2-A38F-CB86FE939A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{792B6B35-D4E6-48A2-A38F-CB86FE939A17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
