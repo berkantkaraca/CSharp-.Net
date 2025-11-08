@@ -63,6 +63,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "29-Interface-Lab", "29-Inte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "30-BuiltInInterface", "30-BuiltInInterface\30-BuiltInInterface.csproj", "{98A6EBAD-5626-487F-AEC1-3737B33722AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "31-Generic", "31-Generic\31-Generic.csproj", "{5B581E62-A629-428E-BD12-7DF274EB0A32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -189,6 +191,10 @@ Global
 		{98A6EBAD-5626-487F-AEC1-3737B33722AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98A6EBAD-5626-487F-AEC1-3737B33722AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98A6EBAD-5626-487F-AEC1-3737B33722AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B581E62-A629-428E-BD12-7DF274EB0A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B581E62-A629-428E-BD12-7DF274EB0A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B581E62-A629-428E-BD12-7DF274EB0A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B581E62-A629-428E-BD12-7DF274EB0A32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
