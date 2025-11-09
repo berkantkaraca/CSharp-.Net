@@ -75,6 +75,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "35-AdoNet", "35-AdoNet\35-A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "36-EntityFramework-DbFirst", "36-EntityFramework-DbFirst\36-EntityFramework-DbFirst.csproj", "{660B6AC9-9BAB-46FA-969C-0C14D137D9C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "37-EntityFramework-CodeFirst", "37-EntityFramework-CodeFirst\37-EntityFramework-CodeFirst.csproj", "{F72934A8-A62D-4A55-9D74-C832D9455A42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +227,10 @@ Global
 		{660B6AC9-9BAB-46FA-969C-0C14D137D9C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{660B6AC9-9BAB-46FA-969C-0C14D137D9C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{660B6AC9-9BAB-46FA-969C-0C14D137D9C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F72934A8-A62D-4A55-9D74-C832D9455A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F72934A8-A62D-4A55-9D74-C832D9455A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F72934A8-A62D-4A55-9D74-C832D9455A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F72934A8-A62D-4A55-9D74-C832D9455A42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
