@@ -1,0 +1,11 @@
+namespace _38_EntityFramework_CodeFirst_2.Models
+{
+    public class ProductTag
+    {
+        // Composite Key: ProductId + TagId ile oluþacak
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
+        public int TagId { get; set; }
+        public Tag Tag { get; set; }
+    }
+}

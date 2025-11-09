@@ -77,6 +77,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "36-EntityFramework-DbFirst"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "37-EntityFramework-CodeFirst", "37-EntityFramework-CodeFirst\37-EntityFramework-CodeFirst.csproj", "{F72934A8-A62D-4A55-9D74-C832D9455A42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "38-EntityFramework-CodeFirst-2", "38-EntityFramework-CodeFirst-2\38-EntityFramework-CodeFirst-2.csproj", "{5BA761D4-9FAA-4F44-9E60-DD8A0A32AAC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -231,6 +233,10 @@ Global
 		{F72934A8-A62D-4A55-9D74-C832D9455A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F72934A8-A62D-4A55-9D74-C832D9455A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F72934A8-A62D-4A55-9D74-C832D9455A42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA761D4-9FAA-4F44-9E60-DD8A0A32AAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA761D4-9FAA-4F44-9E60-DD8A0A32AAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA761D4-9FAA-4F44-9E60-DD8A0A32AAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA761D4-9FAA-4F44-9E60-DD8A0A32AAC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
