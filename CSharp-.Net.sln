@@ -79,6 +79,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "37-EntityFramework-CodeFirs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "38-EntityFramework-CodeFirst-2", "38-EntityFramework-CodeFirst-2\38-EntityFramework-CodeFirst-2.csproj", "{5BA761D4-9FAA-4F44-9E60-DD8A0A32AAC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "39-EntityFramework-State", "39-EntityFramework-State\39-EntityFramework-State.csproj", "{C0108884-E9B4-4E85-91C4-5BAEE23F5F5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -237,6 +239,10 @@ Global
 		{5BA761D4-9FAA-4F44-9E60-DD8A0A32AAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BA761D4-9FAA-4F44-9E60-DD8A0A32AAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BA761D4-9FAA-4F44-9E60-DD8A0A32AAC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0108884-E9B4-4E85-91C4-5BAEE23F5F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0108884-E9B4-4E85-91C4-5BAEE23F5F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0108884-E9B4-4E85-91C4-5BAEE23F5F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0108884-E9B4-4E85-91C4-5BAEE23F5F5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
