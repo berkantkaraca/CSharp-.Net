@@ -83,6 +83,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "39-EntityFramework-State", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "40-EntityFramework-Inheritance", "40-EntityFramework-Inheritance\40-EntityFramework-Inheritance.csproj", "{06581B42-7728-4E77-9E32-37CB38ECF3C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "41-EntityFramework-LoadingType", "41-EntityFramework-LoadingType\41-EntityFramework-LoadingType.csproj", "{D714E2B0-E71E-43E8-9A5F-212A2E3E9664}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -249,6 +251,10 @@ Global
 		{06581B42-7728-4E77-9E32-37CB38ECF3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06581B42-7728-4E77-9E32-37CB38ECF3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06581B42-7728-4E77-9E32-37CB38ECF3C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D714E2B0-E71E-43E8-9A5F-212A2E3E9664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D714E2B0-E71E-43E8-9A5F-212A2E3E9664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D714E2B0-E71E-43E8-9A5F-212A2E3E9664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D714E2B0-E71E-43E8-9A5F-212A2E3E9664}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
