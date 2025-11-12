@@ -134,7 +134,7 @@ namespace _42_API.Controllers
             return Ok(pagedData);
         }
 
-        [HttpPost("")]
+        [HttpPost]
         public IActionResult CreateEmploye([FromBody] Employee employee) //post default olarak FromBody den alır yazmana gerek yok
         {
             var emp = EmployeeData.Employees.FirstOrDefault(e => e.Id == employee.Id);
@@ -145,6 +145,63 @@ namespace _42_API.Controllers
             EmployeeData.Employees.Add(employee);
 
             return StatusCode(201, employee);
+        }
+
+        [HttpPost("submit-form")]
+        public IActionResult SubmitForm([FromForm] Employee employee)
+        {
+            var emp = EmployeeData.Employees.FirstOrDefault(e => e.Id == employee.Id);
+
+            if (emp != null)
+                return BadRequest("Data mevcut");
+
+            EmployeeData.Employees.Add(employee);
+
+            return StatusCode(201, employee);
+        }
+
+        [HttpPost("upload")]
+        public IActionResult UploadFile([FromForm] FileUpload model)
+        {
+            if (model.File == null || model.File.Length == 0)
+                return BadRequest("File is missing");
+
+            //FileStream operasyonuyla copy işlemi ile dosyayı kaydetme işlemi yapabilirsin
+            return Ok(new
+            {
+                FileName = model.File.FileName,
+                FileSize = model.File.Length,
+                Description = model.Description
+            });
+        }
+
+        //header kısmından parametre gösterimi
+        [HttpGet("get-client-id")]
+        public IActionResult GetClientId([FromHeader(Name = "X-Client-Id")] int clientId)
+        {
+            var employee = EmployeeData.Employees.FirstOrDefault(x => x.Id == clientId);
+
+            if (employee == null)
+                return NotFound();
+
+            return Ok(employee);
+        }
+
+        [HttpPut("{id}")] //Varsa mevcut kaynağı günceller yoksa ekleme yapılabilir. Post gibi de çalışır
+        public IActionResult UpdateEmployee([FromRoute] int id, [FromBody] EmployeeDTO model)
+        {
+            var emp = EmployeeData.Employees.FirstOrDefault(x => x.Id == id);
+
+            if (emp == null)
+                return NotFound();
+
+            emp.Name = model.Name == "string" ? emp.Name : model.Name;
+            //emp.Name = model.Name == default ? emp.Name : model.Name; //value tiplerde bu kullanılabilir. default değere göre kontrol eder
+            emp.Department = model.Department ?? emp.Department;
+            emp.City = model.City ?? emp.City;
+            emp.Gender = model.Gender ?? emp.Gender;
+
+            return Ok(emp);
         }
     }
 }
