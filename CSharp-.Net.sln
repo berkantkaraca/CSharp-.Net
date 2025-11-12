@@ -87,6 +87,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "41-EntityFramework-LoadingT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "42-API", "42-API\42-API.csproj", "{DAEA0885-3C9C-4899-B4E0-E6DD67344B7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "43-API-EntityFramework", "43-API-EntityFramework\43-API-EntityFramework.csproj", "{40D8FC00-5003-4716-BFBF-F3EBB8A3372F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -261,6 +263,10 @@ Global
 		{DAEA0885-3C9C-4899-B4E0-E6DD67344B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAEA0885-3C9C-4899-B4E0-E6DD67344B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAEA0885-3C9C-4899-B4E0-E6DD67344B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40D8FC00-5003-4716-BFBF-F3EBB8A3372F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40D8FC00-5003-4716-BFBF-F3EBB8A3372F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40D8FC00-5003-4716-BFBF-F3EBB8A3372F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40D8FC00-5003-4716-BFBF-F3EBB8A3372F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
