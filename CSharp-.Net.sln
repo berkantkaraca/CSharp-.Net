@@ -91,6 +91,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "43-API-EntityFramework", "4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "44-IoC-DependencyInversion", "44-IoC-DependencyInversion\44-IoC-DependencyInversion.csproj", "{2FF22C44-D1A6-4D51-8E88-D59F263DD783}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "45-IoC-DependencyInjection", "45-IoC-DependencyInjection\45-IoC-DependencyInjection.csproj", "{BC399E92-9511-4DD5-8FBA-EFA249711F10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -273,6 +275,10 @@ Global
 		{2FF22C44-D1A6-4D51-8E88-D59F263DD783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FF22C44-D1A6-4D51-8E88-D59F263DD783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FF22C44-D1A6-4D51-8E88-D59F263DD783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC399E92-9511-4DD5-8FBA-EFA249711F10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC399E92-9511-4DD5-8FBA-EFA249711F10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC399E92-9511-4DD5-8FBA-EFA249711F10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC399E92-9511-4DD5-8FBA-EFA249711F10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
