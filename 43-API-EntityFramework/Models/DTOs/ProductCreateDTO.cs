@@ -1,12 +1,10 @@
-﻿namespace _43_API_EntityFramework.DTOs
+﻿namespace _43_API_EntityFramework.Models.DTOs
 {
-    public record ProductDTO
+    public record ProductCreateDTO
     {
-        public string Name { get; init; }
+        public string Name { get; init; } = default!;
         public decimal Price { get; init; }
         public string? Description { get; init; }
-
-        //Relations
         public int CategoryId { get; init; }
     }
 }

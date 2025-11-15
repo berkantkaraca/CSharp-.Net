@@ -7,6 +7,7 @@ namespace _43_API_EntityFramework.Contexts
     {
         //Option Pattern: Constructordan connection alınacak. Bunun için IoC kaydı yapılmalı
         //nesnenin yaşam döngüsüne karar veririz
+        //Program.cs de opt pattern ile merkezi bir konfigrasyon sağladık
         public AppDbContext(DbContextOptions options) : base(options)
         {
         }
@@ -18,7 +19,6 @@ namespace _43_API_EntityFramework.Contexts
         {
             base.OnModelCreating(modelBuilder);
 
-            //Product
             modelBuilder.Entity<Product>()
                 .Property(p => p.Name)
                 .HasMaxLength(150);
@@ -42,7 +42,6 @@ namespace _43_API_EntityFramework.Contexts
             modelBuilder.Entity<Product>()
                 .HasQueryFilter(p => !p.IsDeleted);
 
-            //Category
             modelBuilder.Entity<Category>()
                .Property(c => c.Name)
                .HasMaxLength(150);

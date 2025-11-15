@@ -2,7 +2,7 @@
 {
     public class Program2
     {
-        static void Main(string[] args)
+        static void Main2(string[] args)
         {
             #region Params
             int[] nums = { 1, 2, 3 };

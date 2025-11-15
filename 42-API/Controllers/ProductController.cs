@@ -35,7 +35,7 @@ namespace _42_API.Controllers
             return Ok(_products);
         }
 
-        [HttpGet]
+        [HttpGet("all")]
         public IActionResult GetAllProducts()
         {
             if (_products == null || _products.Count <= 0)

@@ -1,4 +1,4 @@
-﻿namespace _43_API_EntityFramework.DTOs
+﻿namespace _43_API_EntityFramework.Models.DTOs
 {
     public record CategoryDTO
     {

@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "_40_API_EF": {
+    "API": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

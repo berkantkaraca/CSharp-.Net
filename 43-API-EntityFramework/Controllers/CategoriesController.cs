@@ -1,6 +1,6 @@
 ﻿using _43_API_EntityFramework.Contexts;
-using _43_API_EntityFramework.DTOs;
 using _43_API_EntityFramework.Models;
+using _43_API_EntityFramework.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace _43_API_EntityFramework.Controllers

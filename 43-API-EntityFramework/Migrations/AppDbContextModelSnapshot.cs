@@ -8,7 +8,7 @@ using _43_API_EntityFramework.Contexts;
 
 #nullable disable
 
-namespace _40_API_EF.Migrations
+namespace _43_API_EntityFramework.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -22,7 +22,7 @@ namespace _40_API_EF.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("_40_API_EF.Models.Category", b =>
+            modelBuilder.Entity("_43_API_EntityFramework.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -40,7 +40,7 @@ namespace _40_API_EF.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("_40_API_EF.Models.Product", b =>
+            modelBuilder.Entity("_43_API_EntityFramework.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -82,9 +82,9 @@ namespace _40_API_EF.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("_40_API_EF.Models.Product", b =>
+            modelBuilder.Entity("_43_API_EntityFramework.Models.Product", b =>
                 {
-                    b.HasOne("_40_API_EF.Models.Category", "Category")
+                    b.HasOne("_43_API_EntityFramework.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -93,7 +93,7 @@ namespace _40_API_EF.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("_40_API_EF.Models.Category", b =>
+            modelBuilder.Entity("_43_API_EntityFramework.Models.Category", b =>
                 {
                     b.Navigation("Products");
                 });

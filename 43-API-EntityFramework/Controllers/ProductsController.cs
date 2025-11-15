@@ -1,8 +1,7 @@
-﻿using _43_API_EntityFramework.Contexts;
-using _43_API_EntityFramework.DTOs;
-using _43_API_EntityFramework.Models;
+﻿using _43_API_EntityFramework.Models.DTOs;
+using _43_API_EntityFramework.Services;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace _43_API_EntityFramework.Controllers
 {
@@ -10,131 +9,181 @@ namespace _43_API_EntityFramework.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        //IoC olmasaydı her fonksiyonda bu şekilde oluşturma yapacaktık. Veya constructorda oluştursan alt metotlarda kullanılacktı. Her türlü performan açısından zararlı. IoC de newleme yaptık ve her yerde bu context nesnesini kullanacağız.
-        //public void Add()
-        //{
-        //    AppContext context = new AppContext();
-        //}
+        private readonly IProductService _service;
 
-        private readonly AppDbContext _context;
-
-        //Constructor IoC den contexti çeker ve referansını _contexte atar
-        public ProductsController(AppDbContext context)
+        public ProductsController(IProductService service)
         {
-            _context = context;
+            _service = service;
         }
 
         [HttpGet]
-        public IActionResult GetAllProduct()
+        public async Task<IActionResult> GetAllProduct()
         {
             try
             {
-                var products = _context.Products.ToList();
-                return Ok(products);
+                var dtos = await _service.GetAllAsync();
+                return Ok(dtos);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { Message = $"Veri Çekilemedi", Details = ex.Message });
+                return StatusCode(500, new { Message = $"Veritabanından veri çekilemedi!", Details = ex.Message });
             }
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetProductById([FromRoute] int id)
+        public async Task<IActionResult> GetProductById([FromRoute] int id)
         {
             try
             {
-                var product = _context.Products.FirstOrDefault(x => x.Id == id);
+                var (dto, etag) = await _service.GetByIdAsync(id);
 
-                if (product == null)
-                    return NotFound(new { Message = $"{id} nolu ürün bulunamadı" });
+                if (dto == null)
+                    return NotFound($"{id} nolu ürün bulunamadı!");
 
-                return Ok(product);
+                if (!string.IsNullOrEmpty(etag))
+                    Response.Headers.ETag = etag;
+
+                return Ok(dto);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { Message = $"Veri Çekilemedi", Details = ex.Message });
+                return StatusCode(500, new { Message = $"Veritabanından veri çekilemedi!", Details = ex.Message });
             }
         }
 
         [HttpGet("filter")]
-        public IActionResult GetAllProduct(
-            [FromQuery] string q, //search
+        public async Task<IActionResult> GetAllProduct(
+            [FromQuery] string? q,
             [FromQuery] int? categoryId,
             [FromQuery] decimal? minPrice,
             [FromQuery] decimal? maxPrice,
-            [FromQuery] string? sort = "name_asc", // name_asc, name_dex, price_asc, price_desc 
+            [FromQuery] string? sort = "name_asc",
             [FromQuery] int pageIndex = 1,
             [FromQuery] int pageSize = 5
             )
-            //model binding daha hoş olurdu
-        {
-            //Sorguyu direkt veritabanına atacağımdan IQueryable kullandım, eğer tüm dataları çekip işlem yapsaydım IEnumerable kullanırdım
-            IQueryable<Product> query = _context.Products
-                .Include(p => p.Category) //prductlarla birlikte categoryde gelsin
-                .AsNoTracking(); //Category ile birleştirdik zaten. gelen datayla da işlem yapmayacağım o yüzden trackingi kapadık
-
-            if (!string.IsNullOrWhiteSpace(q))
-                query = query.Where(p => p.Name.Contains(q) || p.Description != null || p.Description.Contains(q));
-
-            if (categoryId is not null)
-                query = query.Where(p => p.CategoryId == categoryId.Value);
-
-            if (minPrice is not null)
-                query = query.Where(p => p.Price >= minPrice.Value);
-
-            if (maxPrice is not null)
-                query = query.Where(p => p.Price <= maxPrice.Value);
-
-            query = sort switch
-            {
-                "name_desc" => query.OrderByDescending(p => p.Name),
-                "price_asc" => query.OrderBy(p => p.Price),
-                "price_desc" => query.OrderByDescending(p => p.Price),
-                _ => query.OrderBy(p => p.Name) // default: name_asc
-            };
-
-            int total = query.Count(); //ana query sorgusu daha gitmez. burda count için ayrı bir sorgu atar  
-            var items = query
-                .Skip((pageIndex - 1) * pageSize)
-                .Take(pageSize)
-                .ToList(); //ana sorgu atılır
-
-            return Ok(new
-            {
-                Count = total,
-                Page = pageIndex,
-                Size = pageSize,
-                TotalPages = (int)Math.Ceiling(total / (double)pageSize),
-                Data = items
-            });
-        }
-
-        [HttpPost]
-        public IActionResult CreateProduct([FromBody] ProductDTO productDTO)
         {
             try
             {
-                if(!ModelState.IsValid)
-                    return BadRequest(ModelState);
-
-                Product  product = new Product()
-                {
-                    Name = productDTO.Name,
-                    Price = productDTO.Price,
-                    Description = productDTO.Description,
-                    CategoryId = productDTO.CategoryId,
-                };
-
-                _context.Products.Add(product);
-                _context.SaveChanges();
-
-                //Ekledikten sonra GetProductById ye yönlendirdik.
-                return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);
+                var result = await _service.GetFilteredAsync(q, categoryId, minPrice, maxPrice, sort, pageIndex, pageSize);
+                return Ok(result);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { Message = $"veri eklenemedi", Details = ex.Message });
+                return StatusCode(500, new { Message = $"Veritabanından veri çekilemedi!", Details = ex.Message });
             }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateProduct([FromBody] ProductCreateDTO productDTO)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                var (dto, etag) = await _service.CreateAsync(productDTO);
+                Response.Headers.ETag = etag;
+
+                //Ekledikten sonra GetProductById ye yönlendirdik.
+                return CreatedAtAction(nameof(GetProductById), new { id = dto.Id }, dto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = $"Veritabanına veri eklenemedi!", Details = ex.Message });
+            }
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct(int id, [FromBody] ProductUpdateDTO dto)
+        {
+            try
+            {
+                var ifMatch = Request.Headers["If-Match"].ToString();
+
+                var (success, error) = await _service.UpdateAsync(id, dto, ifMatch);
+
+                if (!success)
+                {
+                    return error switch
+                    {
+                        "not_found" => NotFound($"{id} nolu product bulunamadı"),
+                        "etag_missing" => StatusCode(428, "E-tag zorunludur"),
+                        "etag_mismatch" => StatusCode(412, "E-tag yapısı değişmiş"),
+                        "_" => StatusCode(400, "Güncelleme yapılamadı")
+                    };
+                }
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = $"Veritabanına veri güncellenemedi!", Details = ex.Message });
+            }
+        }
+
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> PatchProduct(int id, [FromBody] JsonPatchDocument<ProductPatchDTO> patch)
+        {
+            try
+            {
+                var ifMatch = Request.Headers["If-Match"].ToString();
+
+                var (success, error) = await _service.PatchAsync(id, patch, ifMatch);
+
+                if (!success)
+                {
+                    return error switch
+                    {
+                        "not_found" => NotFound($"{id} nolu product bulunamadı"),
+                        "etag_missing" => StatusCode(428, "E-tag zorunludur"),
+                        "etag_mismatch" => StatusCode(412, "E-tag yapısı değişmiş"),
+                        "_" => StatusCode(400, "Güncelleme yapılamadı")
+                    };
+                }
+
+                return NoContent();
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = $"Veritabanına veri güncellenemedi!", Details = ex.Message });
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            try
+            {
+                var success = await _service.SoftDeleteAsync(id);
+                if (!success)
+                    return NotFound();
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = $"Veritabanına veri silinemedi!", Details = ex.Message });
+            }
+        }
+
+        [HttpHead("{id}")]
+        public async Task<IActionResult> HeadProduct(int id)
+        {
+            var etag = await _service.GetEtagAsync(id);
+            if (etag == null)
+                return NotFound();
+
+            Response.Headers.ETag = etag;
+            Response.Headers.Append("X-Resource-Id", id.ToString());
+            return Ok();
+        }
+
+        [HttpOptions]
+        public IActionResult Options()
+        {
+            Response.Headers.Add("Allow", "GET, POST, PUT, PATCH, DELETE, OPTIONS, HEAD");
+            return Ok();
         }
     }
 }
