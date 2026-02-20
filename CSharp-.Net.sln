@@ -99,6 +99,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "47-Middleware", "47-Middlew
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "48-Filters", "48-Filters\48-Filters.csproj", "{0118E407-DA0F-46A5-817A-09DDEB63E442}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "49-GlobalExceptionHandling-ProblemDetails", "49-GlobalExceptionHandling-ProblemDetails\49-GlobalExceptionHandling-ProblemDetails.csproj", "{88518FEF-B4A0-4F6D-865E-DF603B4E92F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -297,6 +299,10 @@ Global
 		{0118E407-DA0F-46A5-817A-09DDEB63E442}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0118E407-DA0F-46A5-817A-09DDEB63E442}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0118E407-DA0F-46A5-817A-09DDEB63E442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88518FEF-B4A0-4F6D-865E-DF603B4E92F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88518FEF-B4A0-4F6D-865E-DF603B4E92F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88518FEF-B4A0-4F6D-865E-DF603B4E92F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88518FEF-B4A0-4F6D-865E-DF603B4E92F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
