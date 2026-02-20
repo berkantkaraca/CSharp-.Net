@@ -1,4 +1,4 @@
-﻿using _46_IoC_DependencyLifetime.Services;
+﻿using _46_IoC_DependencyLifetime.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace _46_IoC_DependencyLifetime.Controllers

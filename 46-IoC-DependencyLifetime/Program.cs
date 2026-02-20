@@ -1,4 +1,5 @@
-﻿using _46_IoC_DependencyLifetime.Services;
+﻿using _46_IoC_DependencyLifetime.Services.Concretes;
+using _46_IoC_DependencyLifetime.Services.Interfaces;
 
 namespace _46_IoC_DependencyLifetime
 {
@@ -24,7 +25,17 @@ namespace _46_IoC_DependencyLifetime
 
             //Singleton: Uygulama boyunca aynı nesneyi döndürür. Genellikle konfigürasyon nesnelerinde kullanılır. Loglama mekanizması, SMS gönderme.
             //https://localhost:7203/date sayfayı her yenilediğinde program kapanana kadar aynı saatleri görürsün
-            builder.Services.AddSingleton<IShowDateTime, ShowDateTime>(); 
+            builder.Services.AddSingleton<IShowDateTime, ShowDateTime>();
+
+            // Transient
+            builder.Services.AddTransient<IGuidService, GuidService>();
+            builder.Services.AddTransient<TransientGuidService>();
+
+            // Scoped
+            builder.Services.AddScoped<ScopedGuidService>();
+
+            // Singleton
+            builder.Services.AddSingleton<SingletonGuidService>();
 
             var app = builder.Build();
 
@@ -45,7 +56,7 @@ namespace _46_IoC_DependencyLifetime
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Date}/{action=Index}/{id?}");
 
             app.Run();
         }
