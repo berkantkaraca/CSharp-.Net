@@ -1,0 +1,115 @@
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using _48_Filters.Models;
+using _48_Filters.Models.Product;
+using _48_Filters.Repository;
+using System.Globalization;
+
+namespace _48_Filters.Services
+{
+    public class ProductService : IProductService
+    {
+        private readonly IGenericRepository<Product> _repository;
+        private readonly IMapper _mapper;
+        public ProductService(IGenericRepository<Product> repository, IMapper mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
+
+        public void Add(ProductSaveDto product)
+        {
+            //Product productEntity = new Product
+            //{
+            //    Name = product.Name,
+            //    Price = product.Price,
+            //    Stock = product.Stock
+            //};
+
+            var productEntity = _mapper.Map<Product>(product);
+
+            _repository.Add(productEntity);
+            _repository.Save();
+        }
+
+        public void Delete(int id)
+        {
+            var currentProduct = _repository.GetById(id);
+            if (currentProduct == null)
+                throw new Exception("Ürün bulunamadı");
+
+            _repository.Delete(currentProduct);
+            _repository.Save();
+        }
+
+        public IEnumerable<ProductDto> GetAll()
+        {
+
+            IEnumerable<Product> products = _repository.GetAll();
+
+            var productList= _mapper.Map<List<ProductDto>>(products);
+
+            return productList;
+        }
+        public Result<Product> GetPagedFilteredSorted(int page, int pageSize,string? sort,string? search)
+        {
+            var query = _repository.GetAllQueryable();
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                query = query.Where(p => p.Name.Contains(search));
+            }
+            
+            query = ApplySorting(query, sort);
+
+            var totalCount=query.Count();
+            var data = query.Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .AsNoTracking()
+                .ToList();
+
+            return new Result<Product>(data,totalCount,page,pageSize );
+
+        }
+
+        public ProductDto? GetById(int id)
+        {
+            var entity = _repository.GetById(id);
+
+            var dto= _mapper.Map<ProductDto>(entity);
+
+            return dto;
+        }
+
+        public void Update(int id, ProductSaveDto product)
+        {
+            var currentProduct = _repository.GetById(id);
+            if (currentProduct == null)
+                throw new Exception("Ürün bulunamadı");
+
+            var productEntity = _mapper.Map<Product>(product);
+
+            _repository.Update(productEntity);
+            _repository.Save();
+        }
+
+        private IQueryable<Product> ApplySorting(IQueryable<Product> query,string? sort)
+        {
+            if (string.IsNullOrEmpty(sort))
+            {
+                return query.OrderBy(p => p.Id);
+            }
+
+            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
+            sort = textInfo.ToTitleCase(sort);
+
+            bool descending = sort.StartsWith("-");
+            string property=descending? sort.Substring(1) : sort;
+
+            return descending
+                ? query.OrderByDescending(p =>EF.Property<object>(p,property)) 
+                : query.OrderBy(p=> EF.Property<object>(p, property));
+        }
+    }
+}
