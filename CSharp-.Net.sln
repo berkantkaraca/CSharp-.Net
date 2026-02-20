@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.0.11205.157 d18.0
+VisualStudioVersion = 18.0.11205.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-Intro", "01-Intro\01-Intro.csproj", "{8C285B7C-6839-40C4-AA0B-1BE04222E46F}"
 EndProject
@@ -94,6 +94,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "45-IoC-DependencyInjection", "45-IoC-DependencyInjection\45-IoC-DependencyInjection.csproj", "{BC399E92-9511-4DD5-8FBA-EFA249711F10}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "46-IoC-DependencyLifetime", "46-IoC-DependencyLifetime\46-IoC-DependencyLifetime.csproj", "{AFF5DA0D-77A1-4CDF-AF2F-A6871CF10732}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "47-Middleware", "47-Middleware\47-Middleware.csproj", "{3C54418D-94DA-4392-A327-DF412A721783}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -285,6 +287,10 @@ Global
 		{AFF5DA0D-77A1-4CDF-AF2F-A6871CF10732}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFF5DA0D-77A1-4CDF-AF2F-A6871CF10732}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFF5DA0D-77A1-4CDF-AF2F-A6871CF10732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C54418D-94DA-4392-A327-DF412A721783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C54418D-94DA-4392-A327-DF412A721783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C54418D-94DA-4392-A327-DF412A721783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C54418D-94DA-4392-A327-DF412A721783}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
