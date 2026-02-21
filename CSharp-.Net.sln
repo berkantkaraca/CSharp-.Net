@@ -107,6 +107,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "51-Logs", "51-Logs\51-Logs.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "52-SwaggerOpenAPI", "52-SwaggerOpenAPI\52-SwaggerOpenAPI.csproj", "{8C00A5C0-DFD8-43B4-96DC-A43F715856B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "53-Jwt", "53-Jwt\53-Jwt.csproj", "{9C2486C4-16E9-4731-9400-76871B1C021A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -321,6 +323,10 @@ Global
 		{8C00A5C0-DFD8-43B4-96DC-A43F715856B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C00A5C0-DFD8-43B4-96DC-A43F715856B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C00A5C0-DFD8-43B4-96DC-A43F715856B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C2486C4-16E9-4731-9400-76871B1C021A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C2486C4-16E9-4731-9400-76871B1C021A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C2486C4-16E9-4731-9400-76871B1C021A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C2486C4-16E9-4731-9400-76871B1C021A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
