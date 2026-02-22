@@ -109,6 +109,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "52-SwaggerOpenAPI", "52-Swa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "53-Jwt", "53-Jwt\53-Jwt.csproj", "{9C2486C4-16E9-4731-9400-76871B1C021A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "54-Authorization", "54-Authorization\54-Authorization.csproj", "{EB56C50A-492B-4920-8288-AD30C75FA901}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -327,6 +329,10 @@ Global
 		{9C2486C4-16E9-4731-9400-76871B1C021A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C2486C4-16E9-4731-9400-76871B1C021A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C2486C4-16E9-4731-9400-76871B1C021A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB56C50A-492B-4920-8288-AD30C75FA901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB56C50A-492B-4920-8288-AD30C75FA901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB56C50A-492B-4920-8288-AD30C75FA901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB56C50A-492B-4920-8288-AD30C75FA901}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
