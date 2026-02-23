@@ -111,6 +111,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "53-Jwt", "53-Jwt\53-Jwt.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "54-Authorization", "54-Authorization\54-Authorization.csproj", "{EB56C50A-492B-4920-8288-AD30C75FA901}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "55-RateLimiter", "55-RateLimiter\55-RateLimiter.csproj", "{0CA0A58A-8A26-4230-8E93-B181E7AD1EBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -333,6 +335,10 @@ Global
 		{EB56C50A-492B-4920-8288-AD30C75FA901}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB56C50A-492B-4920-8288-AD30C75FA901}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB56C50A-492B-4920-8288-AD30C75FA901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CA0A58A-8A26-4230-8E93-B181E7AD1EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CA0A58A-8A26-4230-8E93-B181E7AD1EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CA0A58A-8A26-4230-8E93-B181E7AD1EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CA0A58A-8A26-4230-8E93-B181E7AD1EBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
